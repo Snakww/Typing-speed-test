@@ -146,15 +146,16 @@ body {
 .restart {
   
   display: block;
-  margin: 2rem auto 0;
-  padding: 0.75rem 2rem;
+  margin: 3rem auto 0;
+  padding: 0.40rem 3rem;
   background-color: var(--neutral-800);
   color: var(--neutral-0);
   border: 1px solid var(--neutral-500);
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   font: inherit;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
+  font-size: 0.875rem;
 }
 
 .restart:hover {
@@ -166,6 +167,7 @@ body {
 
 .test-complete{
   text-align: center;
+  display: none;
 }
 
 .test-complete-text1 {
@@ -185,6 +187,7 @@ body {
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+  display: none;
 }
 
 
@@ -208,6 +211,33 @@ body {
   font-size: 1.5rem;
   color: var(--neutral-0);
 }
+
+.go-again {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  background-color:  hsl(0, 0%, 100%);
+  color: var(--neutral-900);
+  border: 1px solid var(--neutral-500);
+  border-radius: 1rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.go-again:hover {
+  border-color: var(--neutral-0); 
+  }
+
+.attribution {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 1rem;
+  }
 
 .cabecalho,
 .menu,
