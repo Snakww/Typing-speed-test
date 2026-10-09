@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <linl rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.google.com/specimen/Sora">
+
   <title>Frontend Mentor | Typing Speed Test</title>
 
 </head>
+
 <body>
   <div class="start-screen">
     <button class="start">Start typing fast</button>
@@ -17,46 +21,55 @@
   </div>
   <div class="cabecalho">
     <img src="./assets/images/logo-large.svg" alt="logo" class="logo">
-    <p> <img src="./assets/images/icon-personal-best.svg" alt="trophy" class="trophy"> Personal Best: <!-- PB --> WPM</p>
+    <p> <img src="./assets/images/icon-personal-best.svg" alt="trophy" class="trophy"> Personal Best: <!-- PB --> WPM
+    </p>
   </div>
-<div class="menu">
-  <p>WPM: <!-- WPM --></p>
-  <p>Accuracy: <!-- Accuracy --></p>
-  <p>Time: <!-- Time --></p>
 
- <p>Difficulty:</p> 
-  <button class="difficulty" id="easy">Easy</button>
-  <button class="difficulty" id="medium">Medium</button>
-  <button class="difficulty" id="hard">Hard</button>
-  
+  <div class="menu">
+    <div class="stats">
+      <p>WPM: <!-- WPM --></p>
+      <p>Accuracy: <!-- Accuracy --></p>
+      <p>Time: <!-- Time --></p>
+    </div>
 
-  <p>Mode:</p>
-  <button class="mode" id="timed">Timed (60s)</button>
-  <button class="mode" id="passage">Passage</button>
-</div>
-  <!-- Passage -->
-<div class="passage">
-  <p class="text">Start Typing Test</p>
-  <p class="text">Or click the text and start typing</p>
+    <div class="settings">
+      <p>Difficulty:</p>
+      <button class="difficulty" id="easy">Easy</button>
+      <button class="difficulty" id="medium">Medium</button>
+      <button class="difficulty" id="hard">Hard</button>
+    </div>
+
+    <div class="modes">
+      <p>Mode:</p>
+      <button class="mode" id="timed">Timed (60s)</button>
+      <button class="mode" id="passage">Passage</button>
+    </div>
 </div>
 
-  <!-- Test Complete Start -->
-<div class="test-complete">
-  <p class="test-complete-text">Test Complete!</p>
-<p class="test-complete-text">Solid run. Keep pushing to beat your high score.</p>
-</div>
-<div class="test-complete-stats">
-  <p>WPM: <!-- WPM --></p>
-  <p>Accuracy: <!-- Accuracy --></p>
-  <p>Characters: <!-- Correct/Incorrect --></p>
-</div>
-  <button class="go-again">Go Again</button>
-  
-  <!-- Test Complete End -->
+    <!-- Passage -->
+    <div class="passage">
+      <p class="text">Start Typing Test</p>
+      <p class="text">Or click the text and start typing</p>
+    </div>
 
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/Snakww">Snakww</a>.
-  </footer>
+    <!-- Test Complete Start -->
+    <div class="test-complete">
+      <p class="test-complete-text">Test Complete!</p>
+      <p class="test-complete-text">Solid run. Keep pushing to beat your high score.</p>
+    </div>
+    <div class="test-complete-stats">
+      <p>WPM: <!-- WPM --></p>
+      <p>Accuracy: <!-- Accuracy --></p>
+      <p>Characters: <!-- Correct/Incorrect --></p>
+    </div>
+    <button class="go-again">Go Again</button>
+
+    <!-- Test Complete End -->
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/Snakww">Snakww</a>.
+    </footer>
 </body>
+
 </html>

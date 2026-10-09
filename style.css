@@ -1,4 +1,119 @@
-body {
+* {
   margin: 0;
-  background-color: rgba(hsl(0, 0%, 7%));
+  padding: 0;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: hsl(0, 0%, 7%);
+  color: hsl(0, 0%, 100%);
+}
+
+:root {
+  --neutral-900: hsl(0, 0%, 7%);
+  --neutral-800: hsl(0, 0%, 15%);
+  --neutral-500: hsl(240, 3%, 46%);
+  --neutral-400: hsl(240, 1%, 59%);
+  --neutral-0: hsl(0, 0%, 100%);
+}
+
+
+.start-screen {
+  display: none;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+  padding: 1rem 1.5rem;
+  background: var(--neutral-900);
+  border-bottom: 1px solid var(--neutral-800);
+  color: var(--neutral-400);
+  font-size: 0.9rem;
+}
+
+.menu p {
+  margin: 0;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  display: flex;
+  align-items: center;
+}
+
+.stats p {
+  padding: 0 1.5rem;
+}
+
+.stats p:first-child {
+  padding-left: 0;
+}
+
+/* separador entre os itens */
+.stats p + p {
+  border-left: 1px solid var(--neutral-800);
+}
+
+/* valores (o JS preenche o texto) */
+.stats span {
+  font-weight: 700;
+  color: var(--neutral-0);
+}
+
+#accuracy-value { color: var(--red); }
+#time-value     { color: var(--yellow); }
+
+/* ---------- Settings e Modes ---------- */
+.settings,
+.modes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings {
+  margin-left: auto;
+}
+
+.modes {
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--neutral-800);
+}
+
+/* ---------- Botões ---------- */
+.menu button {
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  color: var(--neutral-0);
+  border: 1px solid var(--neutral-500);
+  border-radius: 0.5rem;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.menu button:hover {
+  border-color: var(--neutral-400);
+}
+
+/* botão selecionado: o JS adiciona/remove essa classe */
+.menu button.active {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.menu button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
