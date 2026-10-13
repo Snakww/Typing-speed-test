@@ -159,21 +159,34 @@ let dificuldadeAtual = frasesEasy
 easy.addEventListener('click', () => {
     dificuldadeAtual = frasesEasy
     reiniciar()
+    atualizarDificuldade(easy);
     passage.classList.remove('hard');
 });
 
 medium.addEventListener('click', () => {
     dificuldadeAtual = frasesMedium
     reiniciar()
+    atualizarDificuldade(medium);
     passage.classList.remove('hard');
 });
 
 hard.addEventListener('click', () => {
     dificuldadeAtual = frasesHard
     reiniciar()
+    atualizarDificuldade(hard);
     passage.classList.add('hard');
 
 });
+
+
+function atualizarDificuldade(botaoAtivo) {
+    easy.classList.remove('active');
+    medium.classList.remove('active');
+    hard.classList.remove('active');
+
+    botaoAtivo.classList.add('active');
+}
+
 
 let fraseAleatoria = sortearFrase();
 

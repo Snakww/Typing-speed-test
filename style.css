@@ -116,12 +116,12 @@ body {
 
 /* botão selecionado: o JS adiciona/remove essa classe */
 .menu button.active {
-  color: var(--blue);
-  border-color: var(--blue);
+    color: var(--blue-600);
+    border-color: var(--blue-600);
 }
 
 .menu button:focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--blue-600);
   outline-offset: 2px;
 }
 
