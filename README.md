@@ -52,7 +52,6 @@ typing-speed-test-main/
 ├── data.json
 ├── style-guide.md
 ├── preview.jpg
-├── README-template.md
 ├── README.md
 └── .gitignore
 ```

@@ -141,6 +141,14 @@ body {
   opacity: 0;
   position:fixed
 }
+.complete-image {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 16px;
+    filter: drop-shadow(0 0 12px #00ff78)
+            drop-shadow(0 0 28px rgba(0, 255, 120, 0.45));
+}
 
 .restart-divider {
   border: none;
