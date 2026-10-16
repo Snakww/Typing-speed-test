@@ -9,12 +9,16 @@ const menu = document.querySelector('.menu');
 const passage = document.querySelector('.passage');
 const accuracyValue = document.querySelector('.accuracy-value');
 const wpmValue = document.querySelector('.wpm-value');
-const timeValue = document.querySelector('.characters-value');
+const charactersValue = document.querySelector('.characters-value');
 const easy = document.querySelector('#easy');
 const medium = document.querySelector('#medium');
 const hard = document.querySelector('#hard');
+const tempo = document.querySelector('#timed')
+const botaoPassage = document.querySelector('#passage')
 
-
+let modoAtual = 'passage';
+let tempoRestante = 60;
+let intervaloTempo = null;
 let erros = 0;
 let textoAnterior = '';
 let totalTentativas = 0;
@@ -26,6 +30,10 @@ function detectar() {
         const textoAtual = texto.value;
         if (tempoInicio === null && textoAtual.length > 0) {
             tempoInicio = Date.now();
+            if (modoAtual === 'timed') {
+                iniciarCronometro();
+            }
+
         }
         if (textoAtual.length > textoAnterior.length) {
             const indice = textoAtual.length - 1;
@@ -56,7 +64,8 @@ function detectar() {
         });
 
         const corretos = display.querySelectorAll('.correct').length;
-        const incorretos = display.querySelectorAll('.incorrect').length;
+        const incorretos = erros;
+        charactersValue.textContent = `${corretos}/${incorretos}`;
 
         const accuracy = totalTentativas > 0
             ? Math.max(0, ((totalTentativas - erros) / totalTentativas) * 100)
@@ -64,17 +73,12 @@ function detectar() {
 
         if (texto.value === fraseAleatoria) {
             const tempoFim = Date.now();
+            clearInterval(intervaloTempo);
             const tempoSegundos = (tempoFim - tempoInicio) / 1000;
-            timeValue.textContent = `${Math.round(tempoSegundos)}s`;
             const wpm = (texto.value.length / 5) * (60 / tempoSegundos);
             wpmValue.textContent = Math.round(wpm);
             accuracyValue.textContent = `${accuracy.toFixed(0)}%`;
-
-            complete.style.display = 'block';
-            resultadoStats.style.display = 'flex';
-            goAgain.style.display = 'block';
-            menu.style.display = 'none';
-            passage.style.display = 'none';
+            finalizarTeste();
         }
     });
 }
@@ -209,6 +213,9 @@ function reiniciar() {
     totalTentativas = 0;
     textoAnterior = '';
     tempoInicio = null;
+    clearInterval(intervaloTempo);
+    intervaloTempo = null;
+    tempoRestante = 60;
     texto.maxLength = fraseAleatoria.length;
 
     fraseAleatoria.split('').forEach((caracteres) => {
@@ -222,6 +229,38 @@ function reiniciar() {
     goAgain.style.display = 'none';
     menu.style.display = 'flex';
     passage.style.display = 'flex';
+}
+
+tempo.addEventListener('click', () => {
+    modoAtual = 'timed';
+    reiniciar()
+});
+
+botaoPassage.addEventListener('click', () => {
+    modoAtual = 'passage';
+    reiniciar();
+});
+
+
+function iniciarCronometro() {
+    intervaloTempo = setInterval(() => {
+        tempoRestante--;
+        console.log(tempoRestante);
+
+        if (tempoRestante <= 0) {
+            clearInterval(intervaloTempo)
+            finalizarTeste()
+        }
+    }, 1000);
+
+}
+
+function finalizarTeste() {
+    complete.style.display = 'block';
+    resultadoStats.style.display = 'flex';
+    goAgain.style.display = 'block';
+    menu.style.display = 'none';
+    passage.style.display = 'none';
 }
 
 function reiniciarTeste() {
